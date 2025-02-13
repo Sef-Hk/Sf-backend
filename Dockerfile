@@ -4,6 +4,9 @@ FROM golang:1.19-alpine AS builder
 # Set the working directory
 WORKDIR /app
 
+# Install CA certificates and Git (needed for HTTPS and module fetching)
+RUN apk update && apk add --no-cache ca-certificates git
+
 # Copy go.mod and go.sum and download dependencies
 COPY go.mod go.sum ./
 RUN go mod download
