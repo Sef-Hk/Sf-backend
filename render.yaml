@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: state-full-authentication-backend
+    env: docker
+    plan: free
+    rootDirectory: backend
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: PGHOST
+        fromEnv: PGHOST
+      - key: PGPORT
+        fromEnv: PGPORT
+      - key: PGUSER
+        fromEnv: PGUSER
+      - key: POSTGRES_PASSWORD
+        fromEnv: POSTGRES_PASSWORD
+      - key: PGDATABASE
+        fromEnv: PGDATABASE
+      - key: PGSSLMODE
+        fromValue: "require"
+      - key: REDIS_URL
+        fromEnv: REDIS_URL
+      - key: PORT
+        fromValue: "8080"
