@@ -33,7 +33,8 @@ func InitSessionStore() {
 		Expiration:     24 * time.Hour,
 		CookieSecure:   true, // Set to true in production
 		CookieHTTPOnly: true,
-		CookieSameSite: "Lax",
+		// CookieSameSite: "Lax",
+		CookieSameSite: "None",
 		CookiePath:     "/",
 	})
 	log.Println("✅ Session store initialized with Redis!")
