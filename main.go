@@ -17,11 +17,11 @@ func main() {
 
 	// Initialize session store once
 	config.InitSessionStore()
-	allowedOrigin := os.Getenv("ALLOW_ORIGIN")
+	// allowedOrigin := os.Getenv("ALLOW_ORIGIN")
 	app := fiber.New()
 
 	app.Use(cors.New(cors.Config{
-		AllowOrigins:     allowedOrigin,
+		AllowOrigins:     "state-full-authentication-olp8.vercel.app",
 		AllowMethods:     "GET,POST,HEAD,PUT,DELETE,OPTIONS",
 		AllowHeaders:     "Origin, Content-Type, Accept, Authorization",
 		AllowCredentials: true,
